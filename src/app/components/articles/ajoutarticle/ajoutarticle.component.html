@@ -1,0 +1,43 @@
+<form>
+    <div>
+      <label for="reference" class="form-label">Réference</label>
+      <input type="email" class="form-control" id="reference" placeholder="reference" name="reference" [(ngModel)]="newarticle().reference"/>
+    </div>
+    <div>
+        <label for="designation" class="form-label">Designation</label>
+        <input type="email" class="form-control" id="designation" placeholder="designation" name="reference" [(ngModel)]="newarticle().designation"/>
+      </div>
+      <div>
+        <label for="qtestock" class="form-label">Stock</label>
+        <input type="email" class="form-control" id="qtestock" placeholder="qtestock" name="reference" [(ngModel)]="newarticle().qtestock"/>
+      </div>
+      <div>
+        <label for="prix" class="form-label">Prix</label>
+        <input type="email" class="form-control" id="prix" placeholder="prix" name="prix" [(ngModel)]="newarticle().prix"/>
+      </div>
+      <div>
+        <label for="marque" class="form-label">Marque</label>
+        <input type="email" class="form-control" id="marque" placeholder="marque" name="marque" [(ngModel)]="newarticle().marque"/>
+      </div>
+      <div>
+        <label for="imageart" class="form-label">Image</label>
+        <input type="email" class="form-control" id="imageart" placeholder="imageart" name="imageart" [(ngModel)]="newarticle().imageart"/>
+      </div>
+      <div>
+        <label for="scategorieID" class="form-label">scategorie</label>
+      <select class="form-select" name="scategorieID" [(ngModel)]="newarticle().scategorieID">
+        <option selected>Selectionner une seule sous-categories</option>
+        @for (item of scategories(); track item._id ){
+            <option value={{item._id}}>{{item.nomscategorie}}</option>
+        }
+      </select>
+    </div>
+      <div class="row"> 
+        <div class="col-3"> 
+          <button type="submit" class="btn btn-success" (click)="ajoutarticle()">Ajouter</button> 
+        </div> 
+        <div class="col-3"> 
+          <button type="button" class="btn btn-danger" (click)="annuler()">Annuler</button> 
+        </div> 
+      </div>
+    </form>

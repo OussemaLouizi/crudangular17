@@ -1,0 +1,18 @@
+<form>
+  <div>
+    <label for="nomcategorie" class="form-label">nom categorie</label>
+    <input type="email" class="form-control" id="nomcategorie" placeholder="Nom catégorie" name="nomcategorie" [(ngModel)]="newcategory().nomcategorie"/>
+  </div>
+  <div>
+    <input type="text" placeholder="Image Catégorie" id="imagecategorie" name="imagecategorie" [(ngModel)]="newcategory().imagecategorie" />
+    <textarea class="form-control" id="imagecategorie" rows="3"></textarea>
+    <div class="row"> 
+      <div class="col-3"> 
+        <button type="submit" class="btn btn-success" (click)="createCategory()">Ajouter</button> 
+      </div> 
+      <div class="col-3"> 
+        <button type="button" class="btn btn-danger" (click)="annuler()">Annuler</button> 
+      </div> 
+    </div>
+  </div>
+  </form>

@@ -1,0 +1,38 @@
+<div class="container"> 
+    <h1 textalign="center">Modifier Catégorie</h1>
+    <form>
+    <div > 
+        <input type="text" placeholder="reference" id="reference" name="reference" [(ngModel)]="newarticle().reference"/>
+    </div>
+    <div > 
+        <input type="text" placeholder="designation" id="designation" name="designation" [(ngModel)]="newarticle().designation"/>
+    </div>
+    <div > 
+        <input type="text" placeholder="qtestock" id="qtestock" name="qtestock" [(ngModel)]="newarticle().qtestock"/>
+    </div>
+    <div > 
+        <input type="text" placeholder="prix" id="prix" name="prix" [(ngModel)]="newarticle().prix"/>
+    </div>
+    <div > 
+        <input type="text" placeholder="marque" id="marque" name="marque" [(ngModel)]="newarticle().marque"/>
+    </div>
+    <div > 
+        <input type="text" placeholder="imageart" id="imageart" name="imageart" [(ngModel)]="newarticle().imageart"/>
+    </div>
+    <div>
+        <select class="form-select" name="scategorieID" [(ngModel)]="newarticle().scategorieID">
+            @for (item of scategories(); track item._id ){
+                <option value={{item._id}}>{{item.nomscategorie}}</option>
+            }
+          </select>
+    </div>
+    <div class="row">
+         <div class="col-3"> 
+        <button type="submit" class="btn btn-success" (click)="modifArticle()">Modifier</button> 
+    </div> 
+    <div class="col-3"> 
+        <button type="button" class="btn btn-danger" (click)="annuler()">Annuler</button> 
+    </div> 
+</div>
+ </form> 
+</div>
